@@ -19,6 +19,9 @@ export function SiteHeader() {
           <Link className="hover:text-[color:var(--tc-text)]" href="/digital-assets">
             🪙 Digital Assets
           </Link>
+          <Link className="hover:text-[color:var(--tc-text)]" href="/faq">
+            FAQ
+          </Link>
           <Link className="hover:text-[color:var(--tc-text)]" href="/privacy">
             Privacy
           </Link>
