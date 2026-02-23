@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 :root {
+  --banner-h: 3.5rem; /* 56px */
+
   --tc-bg: #0b1220;
   --tc-panel: #0f1a2e;
   --tc-border: rgba(148, 163, 184, 0.18);

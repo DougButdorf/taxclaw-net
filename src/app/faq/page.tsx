@@ -64,11 +64,11 @@ const SECTIONS: Section[] = [
       },
       {
         q: "What do the confidence scores mean? (🟢🟡🔴)",
-        a: "They're a quick "how sure is the model" signal for each field. 🟢 = likely correct, 🟡 = plausible but check it, 🔴 = treat as a guess.",
+        a: "They're a quick \"how sure is the model\" signal for each field. 🟢 = likely correct, 🟡 = plausible but check it, 🔴 = treat as a guess.",
       },
       {
-        q: "What does "Needs review" mean?",
-        a: "TaxClaw flags a doc as "Needs review" when one or more important fields are missing or low-confidence. It's not an error-just a heads-up to eyeball the highlighted fields.",
+        q: "What does \"Needs review\" mean?",
+        a: "TaxClaw flags a doc as \"Needs review\" when one or more important fields are missing or low-confidence. It's not an error-just a heads-up to eyeball the highlighted fields.",
       },
       {
         q: "My doc was classified wrong - how do I fix it?",
