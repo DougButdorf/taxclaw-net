@@ -382,9 +382,6 @@ cd taxclaw && ./setup.sh && ./start.sh
                 © 2026 Outbranch Network LLC — not tax advice. Verify all values
                 against source documents.
               </div>
-              <div className="mt-3 text-xs text-[color:var(--tc-muted)]">
-                ETH: <code>0x239e2D3B79CA1Bc74516C233ab0B6fbE6b9Da24c</code>
-              </div>
             </div>
 
             <div className="text-sm text-[color:var(--tc-muted)]">
