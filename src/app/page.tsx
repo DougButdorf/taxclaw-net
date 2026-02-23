@@ -1,3 +1,7 @@
+import Link from "next/link";
+
+import { SiteFooter, SiteHeader } from "../components/site-chrome";
+
 const GITHUB_URL = "https://github.com/DougButdorf/TaxClaw";
 
 function Section({
@@ -60,30 +64,7 @@ function Button({
 export default function Home() {
   return (
     <div className="min-h-screen">
-      <header className="sticky top-[56px] z-10 border-b border-[color:var(--tc-border)] bg-[color:var(--tc-bg)]/80 backdrop-blur">
-        <div className="mx-auto flex max-w-[1100px] items-center justify-between px-5 py-4 sm:px-8">
-          <a href="#top" className="flex items-center gap-2 font-semibold">
-            <span className="text-lg" aria-hidden>
-              🧾🦀
-            </span>
-            <span>TaxClaw</span>
-          </a>
-          <nav className="hidden items-center gap-6 text-sm text-[color:var(--tc-muted)] sm:flex">
-            <a className="hover:text-[color:var(--tc-text)]" href="#how">
-              How it works
-            </a>
-            <a className="hover:text-[color:var(--tc-text)]" href="#privacy">
-              Privacy
-            </a>
-            <a className="hover:text-[color:var(--tc-text)]" href="#install">
-              Install
-            </a>
-            <a className="hover:text-[color:var(--tc-text)]" href="#pricing">
-              Free vs Pro
-            </a>
-          </nav>
-        </div>
-      </header>
+      <SiteHeader />
 
       <main id="top" className="mx-auto max-w-[1100px] px-5 sm:px-8">
         {/* 1) Hero */}
@@ -189,7 +170,25 @@ export default function Home() {
           </div>
         </Section>
 
-        {/* 4) Install TaxClaw */}
+        {/* 4) Digital Assets teaser */}
+        <Section id="digital-assets" title="🪙 Got a 1099-DA? You’re not done yet.">
+          <p className="max-w-2xl text-[color:var(--tc-muted)]">
+            TaxClaw helps you extract what you sold and the proceeds — but cost basis is what turns that into real gains/losses.
+          </p>
+          <p className="mt-3 max-w-2xl text-[color:var(--tc-muted)]">
+            If you received a 1099‑DA this year, here’s what to do next.
+          </p>
+          <div className="mt-5">
+            <Link
+              href="/digital-assets"
+              className="text-sm font-semibold text-[color:var(--tc-accent)] hover:underline"
+            >
+              Learn what to do →
+            </Link>
+          </div>
+        </Section>
+
+        {/* 5) Install TaxClaw */}
         <Section id="install" title="Install TaxClaw">
           <p className="max-w-2xl text-[color:var(--tc-muted)]">
             It&apos;s an OpenClaw skill — install in seconds.
@@ -404,50 +403,7 @@ cd taxclaw && ./setup.sh && ./start.sh
           </div>
         </div>
 
-        {/* 9) Footer */}
-        <footer className="border-t border-[color:var(--tc-border)] py-10">
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
-            <div>
-              <div className="flex items-center gap-2 font-semibold">
-                <span aria-hidden>🧾🦀</span>
-                <span>TaxClaw</span>
-              </div>
-              <div className="mt-3 max-w-md text-sm text-[color:var(--tc-muted)]">
-                TaxClaw is a data extraction tool, not a tax preparation service. AI extraction may produce errors. Always verify extracted data against your original documents. Outbranch Network LLC is not a CPA firm, law firm, or tax advisor. Use of TaxClaw does not constitute tax advice or create a professional relationship. Affiliate links to third-party services are disclosed where they appear. © 2026 Outbranch Network LLC. MIT Licensed (core).{" "}
-                <a
-                  href="https://github.com/DougButdorf/TaxClaw/blob/main/TERMS.md"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-medium text-[color:var(--tc-text)] hover:underline"
-                >
-                  Terms of Use
-                </a>{" "}
-                ·{" "}
-                <a
-                  href="https://github.com/DougButdorf/TaxClaw/blob/main/PRIVACY.md"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-medium text-[color:var(--tc-text)] hover:underline"
-                >
-                  Privacy Policy
-                </a>
-              </div>
-            </div>
-
-            <div className="text-sm text-[color:var(--tc-muted)]">
-              <div className="flex flex-wrap gap-x-4 gap-y-2 sm:justify-end">
-                <a
-                  href={GITHUB_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[color:var(--tc-text)]"
-                >
-                  GitHub
-                </a>
-              </div>
-            </div>
-          </div>
-        </footer>
+        <SiteFooter />
       </main>
     </div>
   );
