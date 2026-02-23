@@ -370,6 +370,22 @@ cd taxclaw && ./setup.sh && ./start.sh
           </p>
         </Section>
 
+        {/* Sponsor callout */}
+        <div className="mt-6 rounded-2xl border border-[color:var(--tc-border)] bg-[color:var(--tc-panel)] p-6">
+          <div className="text-sm text-[color:var(--tc-muted)]">
+            💛 TaxClaw is free and open source. If it saves you time this tax season,
+            consider sponsoring the project.{" "}
+            <a
+              href="https://github.com/sponsors/DougButdorf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[color:var(--tc-text)] hover:underline"
+            >
+              Sponsor on GitHub →
+            </a>
+          </div>
+        </div>
+
         {/* 9) Footer */}
         <footer className="border-t border-[color:var(--tc-border)] py-10">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
@@ -409,6 +425,16 @@ cd taxclaw && ./setup.sh && ./start.sh
                   className="hover:text-[color:var(--tc-text)]"
                 >
                   Terms
+                </a>
+                <span className="opacity-60">·</span>
+                <span className="opacity-60">💛</span>
+                <a
+                  href="https://github.com/sponsors/DougButdorf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[color:var(--tc-text)]"
+                >
+                  Sponsor TaxClaw on GitHub
                 </a>
               </div>
             </div>
