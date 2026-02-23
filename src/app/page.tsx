@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import { SiteFooter, SiteHeader } from "../components/site-chrome";
 
@@ -170,7 +171,58 @@ export default function Home() {
           </div>
         </Section>
 
-        {/* 4) Digital Assets teaser */}
+        {/* 4) See it in action */}
+        <Section id="screenshots">
+          <p className="text-sm text-[color:var(--tc-muted)] mb-6">
+            See it in action →
+          </p>
+
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+            {[
+              {
+                src: "/screenshots/taxclaw_upload.png",
+                alt: "TaxClaw upload screen",
+                caption: "Upload your tax document",
+                width: 1400,
+                height: 900,
+              },
+              {
+                src: "/screenshots/taxclaw_results_top.png",
+                alt: "TaxClaw extracted fields result",
+                caption: "Fields extracted instantly — locally, no cloud",
+                width: 1400,
+                height: 1800,
+              },
+              {
+                src: "/screenshots/taxclaw_costbasis.png",
+                alt: "TaxClaw missing cost basis flagged",
+                caption: "Missing cost basis flagged automatically",
+                width: 1400,
+                height: 900,
+              },
+            ].map((shot) => (
+              <div
+                key={shot.src}
+                className="rounded-xl border border-[color:var(--tc-border)] overflow-hidden bg-[color:var(--tc-panel)]"
+              >
+                <div className="bg-[color:var(--tc-bg)]">
+                  <Image
+                    src={shot.src}
+                    alt={shot.alt}
+                    width={shot.width}
+                    height={shot.height}
+                    className="w-full h-auto"
+                  />
+                </div>
+                <div className="px-4 py-3 text-sm text-[color:var(--tc-muted)]">
+                  {shot.caption}
+                </div>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        {/* 5) Digital Assets teaser */}
         <Section id="digital-assets" title="🪙 Got a 1099-DA? You’re not done yet.">
           <p className="max-w-2xl text-[color:var(--tc-muted)]">
             TaxClaw helps you extract what you sold and the proceeds — but cost basis is what turns that into real gains/losses.
@@ -188,7 +240,7 @@ export default function Home() {
           </div>
         </Section>
 
-        {/* 5) Install TaxClaw */}
+        {/* 6) Install TaxClaw */}
         <Section id="install" title="Install TaxClaw">
           <p className="max-w-2xl text-[color:var(--tc-muted)]">
             It&apos;s an OpenClaw skill — install in seconds.
@@ -230,7 +282,7 @@ cd taxclaw && ./setup.sh && ./start.sh
           </div>
         </Section>
 
-        {/* 5) Privacy first */}
+        {/* 7) Privacy first */}
         <Section id="privacy" title="Privacy first">
           <p className="max-w-2xl text-[color:var(--tc-muted)]">
             Tax docs aren’t “just paperwork.” They’re your SSN, your income,
@@ -268,7 +320,7 @@ cd taxclaw && ./setup.sh && ./start.sh
           </p>
         </Section>
 
-        {/* 5) Supported forms */}
+        {/* 8) Supported forms */}
         <Section id="forms" title="Supported forms">
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {[
@@ -302,7 +354,7 @@ cd taxclaw && ./setup.sh && ./start.sh
           </div>
         </Section>
 
-        {/* 6) Agent interface panel */}
+        {/* 9) Agent interface panel */}
         <Section id="agent" title="">
           <div className="grid gap-10 md:grid-cols-2 md:items-start">
             <div>
@@ -341,7 +393,7 @@ cd taxclaw && ./setup.sh && ./start.sh
         </Section>
 
 
-        {/* 7) Free vs Pro */}
+        {/* 10) Free vs Pro */}
         <Section id="pricing" title="Free vs Pro">
           <div className="grid gap-4 lg:grid-cols-2">
             {[{
