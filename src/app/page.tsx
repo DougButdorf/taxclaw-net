@@ -189,7 +189,49 @@ export default function Home() {
           </div>
         </Section>
 
-        {/* 4) Privacy first */}
+        {/* 4) Install TaxClaw */}
+        <Section id="install" title="Install TaxClaw">
+          <p className="max-w-2xl text-[color:var(--tc-muted)]">
+            It&apos;s an OpenClaw skill — install in seconds.
+          </p>
+
+          <div className="mt-8 grid gap-4 lg:grid-cols-3">
+            <div className="rounded-2xl border border-[color:var(--tc-border)] bg-[color:var(--tc-panel)] p-5">
+              <div className="text-sm font-semibold">Option 1 — Agent install (recommended for OpenClaw users)</div>
+              <pre className="mt-4 overflow-x-auto rounded-xl border border-[color:var(--tc-border)] bg-[color:var(--tc-bg)] p-4 text-xs leading-5 text-[color:var(--tc-text)]">
+                <code>{`Tell your agent: "Install the TaxClaw skill"
+Or send directly: openclaw skill install taxclaw`}</code>
+              </pre>
+            </div>
+
+            <div className="rounded-2xl border border-[color:var(--tc-border)] bg-[color:var(--tc-panel)] p-5">
+              <div className="text-sm font-semibold">Option 2 — GitHub (any machine)</div>
+              <pre className="mt-4 overflow-x-auto rounded-xl border border-[color:var(--tc-border)] bg-[color:var(--tc-bg)] p-4 text-xs leading-5 text-[color:var(--tc-text)]">
+                <code>{`git clone https://github.com/DougButdorf/TaxClaw
+cd taxclaw && ./setup.sh && ./start.sh
+# Opens at http://localhost:8421`}</code>
+              </pre>
+            </div>
+
+            <div className="rounded-2xl border border-[color:var(--tc-border)] bg-[color:var(--tc-panel)] p-5">
+              <div className="text-sm font-semibold">Option 3 — What is OpenClaw?</div>
+              <p className="mt-4 text-sm leading-6 text-[color:var(--tc-muted)]">
+                OpenClaw is a local AI agent platform. TaxClaw is built as a native skill — your agent can install, run,
+                and interact with it directly.
+              </p>
+              <a
+                className="mt-4 inline-block text-sm font-semibold text-[color:var(--tc-accent)] hover:underline"
+                href="https://openclaw.ai"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Learn more at openclaw.ai →
+              </a>
+            </div>
+          </div>
+        </Section>
+
+        {/* 5) Privacy first */}
         <Section id="privacy" title="Privacy first">
           <p className="max-w-2xl text-[color:var(--tc-muted)]">
             Tax docs aren’t “just paperwork.” They’re your SSN, your income,
@@ -299,31 +341,8 @@ export default function Home() {
           </div>
         </Section>
 
-        {/* 7) Install / Get started */}
-        <Section id="install" title="Get started in 3 commands">
-          <div className="rounded-2xl border border-[color:var(--tc-border)] bg-[color:var(--tc-panel)] p-5">
-            <pre className="overflow-x-auto rounded-xl border border-[color:var(--tc-border)] bg-[color:var(--tc-bg)] p-4 text-xs leading-5 text-[color:var(--tc-text)]">
-              <code>{`git clone https://github.com/DougButdorf/TaxClaw
-cd taxclaw && ./setup.sh && ./start.sh
-# open http://localhost:8421`}</code>
-            </pre>
-            <div className="mt-3 text-sm text-[color:var(--tc-muted)]">
-              Install via clawhub: <code>openclaw skill install taxclaw</code> <span className="italic">(once listed)</span>
-            </div>
-            <div className="mt-6">
-              <a
-                className="text-sm font-semibold text-[color:var(--tc-accent)] hover:underline"
-                href={GITHUB_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View full docs on GitHub →
-              </a>
-            </div>
-          </div>
-        </Section>
 
-        {/* 8) Free vs Pro */}
+        {/* 7) Free vs Pro */}
         <Section id="pricing" title="Free vs Pro">
           <div className="grid gap-4 lg:grid-cols-2">
             {[{
@@ -337,7 +356,7 @@ cd taxclaw && ./setup.sh && ./start.sh
               ],
             },
             {
-              title: "💼 Pro ($29/yr)",
+              title: "💼 Pro (coming soon)",
               rows: [
                 ["Extraction mode", "Cloud model option (opt-in)"],
                 ["Documents", "Unlimited"],
@@ -366,7 +385,7 @@ cd taxclaw && ./setup.sh && ./start.sh
           </div>
           <p className="mt-4 text-sm text-[color:var(--tc-muted)]">
             You can run TaxClaw fully local forever. Pro is for power-user
-            exports + batch workflows.
+            exports + batch workflows (coming soon).
           </p>
         </Section>
 
