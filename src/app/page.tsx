@@ -348,7 +348,7 @@ cd taxclaw && ./setup.sh && ./start.sh
             {[{
               title: "🆓 Free",
               rows: [
-                ["Extraction mode", "Local Ollama (default)"],
+                ["Extraction mode", "Local Ollama + Cloud (opt-in)"],
                 ["Documents", "Unlimited"],
                 ["Exports", "CSV, JSON"],
                 ["Broker PDFs", "Standard forms"],
@@ -358,7 +358,6 @@ cd taxclaw && ./setup.sh && ./start.sh
             {
               title: "💼 Pro (coming soon)",
               rows: [
-                ["Extraction mode", "Cloud model option (opt-in)"],
                 ["Documents", "Unlimited"],
                 ["Exports", "TurboTax 8949 export"],
                 ["Broker PDFs", "Consolidated 1099 support"],
