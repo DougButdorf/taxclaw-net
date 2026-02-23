@@ -4,7 +4,7 @@ const GITHUB_URL = "https://github.com/DougButdorf/TaxClaw";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-[56px] z-10 border-b border-[color:var(--tc-border)] bg-[color:var(--tc-bg)]/80 backdrop-blur">
+    <header className="sticky top-[56px] z-20 border-b border-[color:var(--tc-border)] bg-[color:var(--tc-bg)] backdrop-blur">
       <div className="mx-auto flex max-w-[1100px] items-center justify-between px-5 py-4 sm:px-8">
         <Link href="/" className="flex items-center gap-2 font-semibold">
           <span className="text-lg" aria-hidden>

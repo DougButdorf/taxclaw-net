@@ -32,37 +32,40 @@ export const metadata: Metadata = {
 
 function OpenClawSkillBanner() {
   return (
-    <div className="sticky top-0 z-20 border-b border-[color:var(--tc-border)] bg-[color:var(--tc-accent-2)] backdrop-blur">
-      <div className="mx-auto flex max-w-[1100px] flex-col gap-2 px-5 py-3 sm:flex-row sm:items-center sm:justify-between sm:px-8">
-        <div className="text-sm font-semibold text-[color:var(--tc-text)]">
+    <div className="sticky top-0 z-30 border-b border-[color:var(--tc-border)] bg-[color:var(--tc-accent-2)] backdrop-blur">
+      <div className="mx-auto flex max-w-[1100px] items-center justify-between gap-4 px-5 py-3 sm:px-8">
+        <div className="shrink-0 text-sm font-semibold text-[color:var(--tc-text)]">
           🦞 TaxClaw is an OpenClaw skill
         </div>
-        <div className="flex flex-col gap-1 text-xs text-[color:var(--tc-muted)] sm:flex-row sm:items-center sm:gap-3">
-          <div>
-            Install instantly:{" "}
-            <code className="font-mono">openclaw skill install taxclaw</code>
-          </div>
-          <span className="hidden opacity-60 sm:inline">·</span>
-          <div>
-            Or point your agent at:{" "}
+
+        <div className="min-w-0 overflow-x-auto">
+          <div className="flex w-max items-center gap-3 whitespace-nowrap text-xs text-[color:var(--tc-muted)]">
+            <div>
+              Install instantly:{" "}
+              <code className="font-mono">openclaw skill install taxclaw</code>
+            </div>
+            <span className="opacity-60">·</span>
+            <div>
+              Or point your agent at:{" "}
+              <a
+                className="font-semibold text-[color:var(--tc-accent)] hover:underline"
+                href={GITHUB_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                github.com/DougButdorf/TaxClaw
+              </a>
+            </div>
+            <span className="opacity-60">·</span>
             <a
-              className="font-semibold text-[color:var(--tc-accent)] hover:underline"
-              href={GITHUB_URL}
+              className="text-[color:var(--tc-accent)] hover:underline"
+              href={OPENCLAW_URL}
               target="_blank"
               rel="noopener noreferrer"
             >
-              github.com/DougButdorf/TaxClaw
+              What is OpenClaw?
             </a>
           </div>
-          <span className="hidden opacity-60 sm:inline">·</span>
-          <a
-            className="text-[color:var(--tc-accent)] hover:underline"
-            href={OPENCLAW_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            What is OpenClaw?
-          </a>
         </div>
       </div>
     </div>
