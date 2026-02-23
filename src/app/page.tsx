@@ -60,7 +60,7 @@ function Button({
 export default function Home() {
   return (
     <div className="min-h-screen">
-      <header className="sticky top-0 z-10 border-b border-[color:var(--tc-border)] bg-[color:var(--tc-bg)]/80 backdrop-blur">
+      <header className="sticky top-[56px] z-10 border-b border-[color:var(--tc-border)] bg-[color:var(--tc-bg)]/80 backdrop-blur">
         <div className="mx-auto flex max-w-[1100px] items-center justify-between px-5 py-4 sm:px-8">
           <a href="#top" className="flex items-center gap-2 font-semibold">
             <span className="text-lg" aria-hidden>
