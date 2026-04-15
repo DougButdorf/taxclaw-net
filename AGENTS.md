@@ -1,41 +1,213 @@
-# AGENTS.md
+# AGENTS.md — TaxClaw Marketing Site
 
-## Project
-taxclaw-net — Marketing website for TaxClaw tax extraction tool
-Live at: taxclaw.net
-Deploy platform: Vercel
+> This file is the authoritative briefing for any AI coding agent working on this project.
+> Read this entire file before making any changes. Last updated: 2026-04-15.
 
-## Architecture
-- Next.js 15 App Router with React 19
-- Tailwind CSS 4
-- TypeScript
-- Static marketing pages (landing, FAQ, privacy, terms, digital assets)
+## 1. Project Overview
 
-## Build & Test
-```bash
-npm install
-npm run build
-npm run lint
+TaxClaw-net is the marketing and documentation website for TaxClaw — a local-first tax document extraction tool. TaxClaw allows users to extract data from W-2s, 1099s, K-1s, and other tax documents using AI, with all processing happening locally on the user's machine by default.
+
+This is a simple static marketing site built with Next.js. It serves as the public face of the TaxClaw project, explaining what TaxClaw does, how to install it, and linking to the GitHub repository where the actual tool lives.
+
+The site includes:
+- Main landing page with product overview
+- Digital assets guide (for 1099-DA handling)
+- FAQ page
+- Privacy policy and terms of service
+- Screenshots of the TaxClaw interface
+
+**Note:** This repo is just the marketing site. The actual TaxClaw tool is at https://github.com/DougButdorf/TaxClaw.
+
+## 2. Live Environment
+
+- **Production URL:** https://taxclaw.net
+- **Deploy Platform:** Vercel
+- **Vercel Project:** taxclaw-net
+- **Primary Domain:** taxclaw.net
+- **GitHub Repo:** https://github.com/DougButdorf/taxclaw-net
+- **Default Branch:** main
+- **Related Repo:** https://github.com/DougButdorf/TaxClaw (the actual tool)
+
+## 3. Technology Stack
+
+- **Runtime:** Node.js 20+
+- **Framework:** Next.js 15.5.12 (App Router)
+- **Language:** TypeScript 5
+- **React:** React 19.2.3
+- **Styling:** Tailwind CSS 4 with PostCSS
+- **Linting:** ESLint 9 with Next.js config
+- **Deployment:** Vercel (auto-deploy on push to main)
+
+**Notable: No database, no auth, no forms, no complex backend.**
+
+## 4. Repository Structure
+
+```
+/src                — Source code
+  /app              — Next.js App Router pages
+    /page.tsx       — Main landing page
+    /layout.tsx     — Root layout with fonts and CSS variables
+    /globals.css    — Global styles and CSS custom properties
+    /digital-assets — 1099-DA guide page
+    /faq            — FAQ page
+    /privacy        — Privacy policy page
+    /terms          — Terms of service page
+  /components       — Shared components
+    /site-chrome.tsx — Header and footer components
+/public             — Static assets
+  /screenshots      — TaxClaw UI screenshots
+/.next              — Next.js build output (gitignored)
+/node_modules       — Dependencies (gitignored)
 ```
 
-## Environment
-No environment variables required for this static marketing site.
-See .env.example for optional variables.
-Vercel project: taxclaw-net
+**Key files:**
+- `src/app/page.tsx` — Main landing page with all product sections
+- `src/components/site-chrome.tsx` — Site header and footer
+- `vercel.json` — Vercel deployment config with security headers
 
-## Branching
-- main → production
-- feat/* → feature branches
-- All PRs target main
+## 5. Getting Started (Local Development)
 
-## What NOT to touch
-- `vercel.json` — Contains security headers
-- Public assets in `public/`
+```bash
+# 1. Clone the repo
+git clone https://github.com/DougButdorf/taxclaw-net.git
+cd taxclaw-net
 
-## Key integrations
-None — static marketing site only
+# 2. Verify Node.js version (20+ recommended)
+node --version
 
-## Mac-mini dependencies
-None — fully cloud-native
+# 3. Install dependencies
+npm install
+
+# 4. Start development server
+npm run dev
+# App runs at http://localhost:3000
+```
+
+**No environment variables are required** — this is a purely static marketing site.
+
+## 6. Environment Variables
+
+**None required.** This site has no backend integrations, no forms, and no dynamic features that require environment configuration.
+
+The `.env.example` file exists but documents that no environment variables are used.
+
+## 7. Build, Test, and Deploy
+
+```bash
+# Linting
+npm run lint
+
+# Production build
+npm run build
+
+# Start production server locally
+npm run start
+
+# Deploy to Vercel
+# Automatic: Push to main branch triggers auto-deploy
+git push origin main
+
+# Or manual: Use Vercel CLI
+vercel --prod
+```
+
+**No tests are currently configured for this project** — it's a simple marketing site.
+
+## 8. Key Integrations and External Services
+
+### Vercel
+- **Purpose:** Hosting and deployment
+- **Notes:** Auto-deploys on push to main. Security headers configured in `vercel.json`.
+
+### GitHub (TaxClaw repo)
+- **Purpose:** The site links to the actual TaxClaw tool
+- **URL:** https://github.com/DougButdorf/TaxClaw
+- **Notes:** The "Get TaxClaw free" and "View on GitHub" buttons link here.
+
+### GitHub Sponsors
+- **Purpose:** Sponsorship link for supporting the project
+- **URL:** https://github.com/sponsors/DougButdorf
+
+## 9. Database
+
+**None.** This is a static marketing site with no database.
+
+## 10. Branching and Git Workflow
+
+- `main` → production (auto-deploys to Vercel)
+- `feat/*` → feature branches
+- `fix/*` → bug fix branches
+
+**Rules:**
+- All PRs should target `main`
+- No force pushes to main
+- Commit message format: `type: description` (feat, fix, chore, docs, refactor)
+- Run `npm run build` before pushing to verify the site builds
+
+## 11. What NOT to Touch
+
+- **`node_modules/`** — Gitignored, managed by npm.
+- **`.next/`** — Gitignored, generated by Next.js build.
+- **`vercel.json`** — Contains security headers. Modify carefully.
+- **`/public/screenshots/`** — Product screenshots. Update when the TaxClaw UI changes significantly.
+
+## 12. Mac-Mini Dependencies
+
+**None.** This application is fully cloud-native:
+- Hosting: Vercel (cloud)
+- Static assets: Served from Vercel CDN
+
+The codebase can be cloned and run on any machine with Node.js 20+.
 
 Note: The TaxClaw app itself (referenced in documentation) runs locally via OpenClaw skill, but this marketing site has no dependency on that.
+
+## 13. Known Issues and Gotchas
+
+1. **CSS variables** — The design system uses CSS custom properties defined in `globals.css` and `layout.tsx`. Colors like `--tc-bg`, `--tc-panel`, `--tc-accent`, `--tc-text`, `--tc-muted` are used throughout. Don't use hardcoded colors.
+
+2. **Dark theme only** — The site is dark-themed. The color palette is designed for dark backgrounds.
+
+3. **External links** — The main CTAs link to the TaxClaw GitHub repo. Ensure these URLs stay correct.
+
+4. **Screenshots need updating** — When TaxClaw's UI changes, screenshots in `/public/screenshots/` should be updated.
+
+5. **OpenClaw references** — The site mentions OpenClaw (openclaw.ai) as a local AI agent platform. TaxClaw is built as an OpenClaw skill.
+
+## 14. Architecture Decisions
+
+1. **Simple static site** — No backend, no CMS, no database. Just static React pages.
+
+2. **Single-file main page** — The main landing page is in one file (`page.tsx`) with multiple sections. This is intentional for a simple marketing site.
+
+3. **CSS custom properties** — Using CSS variables for theming allows easy color adjustments.
+
+4. **Tailwind CSS 4** — Latest Tailwind for modern styling.
+
+5. **No forms** — Unlike outbranch-net, this site has no contact form. Users are directed to GitHub.
+
+## 15. Agent-Specific Instructions
+
+When working on this codebase as an AI coding agent:
+
+1. **Always run before finishing:**
+   ```bash
+   npm run build
+   ```
+
+2. **Respect the design system** — Use the CSS variables (`--tc-bg`, `--tc-panel`, `--tc-accent`, `--tc-text`, `--tc-muted`, `--tc-border`) defined in `globals.css` and `layout.tsx`. Don't introduce new hardcoded colors.
+
+3. **Keep it simple** — This is a marketing site. Don't over-engineer. If you're adding significant complexity, question whether it belongs here.
+
+4. **Check external links** — Ensure links to the TaxClaw GitHub repo, OpenClaw, and GitHub Sponsors are correct.
+
+5. **No new dependencies without noting** — The site is deliberately lightweight. If you must add a dependency, note it in your commit message.
+
+6. **Commit and push** — Push all changes to GitHub when complete.
+
+7. **Update this file** — If you discover missing or incorrect information in this AGENTS.md, update it.
+
+8. **Screenshots** — If modifying how the product is presented, consider whether screenshots need updating.
+
+---
+
+**Questions?** If you're an AI agent and something is unclear, examine the existing code patterns in `src/app/page.tsx` — it's a single-file marketing page with clear structure.
